@@ -5,18 +5,18 @@ import Register from "../pages/Login/Register/Register";
 export const mainPaths = [
   {
     name: "Home",
-    path: "/",
+    path: "home",
     element: <Home />,
   },
 
   {
     name: "Login",
-    path: "/login",
+    path: "login",
     element: <Login />,
   },
   {
     name: "Register",
-    path: "/register",
+    path: "register",
     element: <Register />,
   },
   {
