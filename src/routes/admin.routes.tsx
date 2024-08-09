@@ -1,6 +1,4 @@
 import { ReactNode } from "react";
-import AdminDashboard from "../pages/Admin/AdminDashboard/AdminDashboard";
-import CreateStudent from "../pages/Admin/CreateStudent/CreateStudent";
 import { NavLink } from "react-router-dom";
 
 type TRoute = {
@@ -18,7 +16,7 @@ const adminPaths = [
   {
     name: "Dashboard",
     path: "dashboard",
-    element: <AdminDashboard />,
+    // element: <AdminDashboard />,
   },
   {
     name: "User Management",
@@ -26,7 +24,7 @@ const adminPaths = [
       {
         name: "Create Student",
         path: "create-student",
-        element: <CreateStudent />,
+        // element: <CreateStudent />,
       },
     ],
   },
@@ -59,25 +57,25 @@ export const adminSidebarItems = adminPaths.reduce((acc: TSidebarItem[], item) =
 
 //! Programetical way
 
-export const adminRoutes = adminPaths.reduce((acc: TRoute[], item) => {
-  if (item.path && item.element) {
-    acc.push({
-      path: item.path,
-      element: item.element,
-    });
-  }
+// export const adminRoutes = adminPaths.reduce((acc: TRoute[], item) => {
+//   if (item.path && item.element) {
+//     acc.push({
+//       path: item.path,
+//       element: item.element,
+//     });
+//   }
 
-  if (item.children) {
-    item.children.forEach((child) => {
-      acc.push({
-        path: child.path,
-        element: child.element,
-      });
-    });
-  }
+//   if (item.children) {
+//     item.children.forEach((child) => {
+//       acc.push({
+//         path: child.path,
+//         element: child.element,
+//       });
+//     });
+//   }
 
-  return acc;
-}, []);
+//   return acc;
+// }, []);
 
 
 //! Hard coded way

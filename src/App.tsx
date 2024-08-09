@@ -1,9 +1,10 @@
-import AdminLayout from "./components/layout/AdminLayout"
+
+import MainLayout from "./components/layout/MainLayout"
 
 
 function App() {
   return (
-    <AdminLayout />
+    <MainLayout />
   )
 }
 
