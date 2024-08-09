@@ -10,6 +10,11 @@ const router = createBrowserRouter([
     element: <App />,
     children: routeGenerator(mainPaths),
   },
+  {
+    path: "/home",
+    element: <App />,
+    children: routeGenerator(mainPaths),
+  },
 ]);
 
 export default router;

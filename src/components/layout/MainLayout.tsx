@@ -1,22 +1,21 @@
 import { Outlet } from "react-router-dom";
-import { Image } from "antd";
-import { Breadcrumb, Layout, Menu, theme } from "antd";
+import {  Layout, Grid  } from "antd";
 import FooterSec from "../../pages/SharedPage/Footer/FooterSec";
-import { navbarItemGenerator } from "../../utils/navbarItemGenerator";
+
 import MenuBar from "./MenuBar";
 
-const { Header, Content, Footer } = Layout;
+const {  Content, Footer } = Layout;
+const { useBreakpoint } = Grid;
 
-const items = new Array(5).fill(null).map((_, index) => ({
-  key: index + 1,
-  label: `nav ${index + 1}`,
-}));
+
 const MainLayout = () => {
+   const screens = useBreakpoint();
+    const contentPadding = screens.md ? "0 100px" : "0 0";
     return (
       <div>
-        <Layout >
+        <Layout>
           <MenuBar />
-          <Content style={{ padding: "0 100px", background:'#fff' }}>
+          <Content style={{ padding: contentPadding, background: "#fff" }}>
             {/* <Breadcrumb style={{ margin: "16px 0" }}>
               <Breadcrumb.Item>Home</Breadcrumb.Item>
               <Breadcrumb.Item>List</Breadcrumb.Item>
@@ -24,8 +23,7 @@ const MainLayout = () => {
             </Breadcrumb> */}
             <div
               style={{
-                minHeight: '100vh',
-              
+                minHeight: "100vh",
 
                 // padding: 28,
               }}
@@ -33,7 +31,7 @@ const MainLayout = () => {
               <Outlet />
             </div>
           </Content>
-          <Footer style={{ background: "#061329", padding: "0 100px" }}>
+          <Footer style={{ background: "#061329", padding: contentPadding }}>
             <FooterSec />
           </Footer>
         </Layout>

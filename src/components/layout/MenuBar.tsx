@@ -36,7 +36,9 @@ const MenuBar = () => {
         zIndex: 1,
         width: "100%",
         margin: 0,
-        padding: "0 100px",
+        padding: "50px 100px",
+        // borderBottom: "3px solid #0566FF",
+        boxShadow: "0px 3px 10px rgba(0, 0, 0, 0.1)",
       }}
     >
       <div style={{ marginRight: "10px" }}>
@@ -53,7 +55,7 @@ const MenuBar = () => {
         mode="horizontal"
         defaultSelectedKeys={["1"]}
         items={navbarItems}
-        style={{ flex: 1, minWidth: 0 }}
+        style={{ flex: 1, minWidth: 0, borderBottom: "none" }}
       />
     </Header>
   );
